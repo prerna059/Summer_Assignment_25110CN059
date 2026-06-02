@@ -6,7 +6,7 @@ int main()
     printf("Enter the number :");
     scanf("%d", &n);
     int number=n;
-    while(n>0)
+    while(n!=0)
     {
         r=n%10;
         reverse= reverse*10+r;

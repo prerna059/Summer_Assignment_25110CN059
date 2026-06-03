@@ -1,5 +1,5 @@
 #include<stdio.h>
-#include<stdbool.h>
+
 int main()
 {
 int  l,u, flag = 0;
@@ -13,6 +13,25 @@ if(l>u){
     l=temp;
 }
 int p;
-
+int n;
+printf("The prime numbers between %d and %d: ", l, u);
 for (int n=l; n<=u; n=n+1)
 {
+  p=1;
+ if(n<2){
+      p=0;
+   }
+    
+ for(int i = 2 ; i<=n-1; i++)
+     {
+        if (n%i==0){
+           p= 0;
+           break;
+           }
+        }
+ if(p==1){
+         printf("%d ", n);
+      }
+}
+return 0;
+}

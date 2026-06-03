@@ -2,7 +2,7 @@
 
 int main()
 {
-int  l,u, flag = 0;
+int  l,u;
 printf("Enter lower limit:");
 scanf("%d",&l);
 printf("Enter upper limit:");

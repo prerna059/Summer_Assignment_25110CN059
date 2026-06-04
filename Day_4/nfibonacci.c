@@ -5,8 +5,7 @@ int main()
     int n;
     printf("Enter the nth term: ");
     scanf("%d", &n);
-    if(n<0){
-        n=-n;}
+    n=(n<0)?-n:n;
     int fibo[n];
 
      fibo[0]=0;

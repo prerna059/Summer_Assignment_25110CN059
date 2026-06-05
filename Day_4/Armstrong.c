@@ -19,11 +19,13 @@ int main()
     while(n!=0)
     {
         r=n%10;
+        if(r<0){
+            break;}
         sum= sum+pow(r,count);
         n=n/10;
     }
     n=temp;
-    if(sum==n){
+    if(sum==n || n==0){
         printf("The entered number is armstrong");
     }
 else{

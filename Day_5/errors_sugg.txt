@@ -1,1 +1,11 @@
 
+addition code without operator
+bitwise operators incorporation in code(even odd using bitwise)
+less efficient upon array use: unnecessary space occupation and 
+loops unnecessary or repetitive iterations : time taking
+negative numbers for accepting natural "n" consideration 
+ASCII n library fn*
+detailed studies on structure, recursion
+?*errors*/
+double equal to in "if"
+step by step value manipulation of a variable matters as it might change during loop runs or other commands

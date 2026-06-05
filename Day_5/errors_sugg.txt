@@ -8,4 +8,4 @@ ASCII n library fn*
 detailed studies on structure, recursion
 ?*errors*/
 double equal to in "if"
-step by step value manipulation of a variable matters as it might change during loop runs or other commands
+##step by step value manipulation of a variable matters as it might change during loop runs or other commands##

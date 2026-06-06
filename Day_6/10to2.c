@@ -26,29 +26,7 @@ int main(){
     
     n=temp2;
     printf("The binary form of %d is ", n);
-    /*if(n<0){
-        int negbinary[count];
-        for(int k=0;k<=count-1;k++){
-       negbinary[k]= ~binary[k];
-        }
-        if(negbinary[count-1]==0){
-        negbinary[count-1]+1;
-       }
-       else{
-        int i;
-        //while(i!=0)
-        for(i=count-1;i>=0;i--){
-           if(negbinary!=0) {
-           negbinary[i]=1;
-            
-           }
-           
-        
-       }
-    }
-}
-   
-else{*/
+  
     for(int j=0; j<=count-1; j++){
         printf("%d", binary[j]);
     }

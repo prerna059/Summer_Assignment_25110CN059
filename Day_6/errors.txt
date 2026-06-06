@@ -1,1 +1,2 @@
-
+remember the difference of 1 between actual size of array and and last array location.
+more practise n understanding of nested loops.

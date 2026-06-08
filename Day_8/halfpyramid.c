@@ -2,8 +2,9 @@
 int main()
 {
   int rows;
-printf("Enter the number of rows: ");
+printf("Enter the postive number of rows: ");
 scanf("%d", &rows);
+rows=(rows<0)?-rows:rows;  
 for(int i=1; i<=rows; i++){
 for(int j=1; j<=i; j++){
 printf("*");

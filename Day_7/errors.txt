@@ -1,1 +1,2 @@
-
+functions name and variables name inside that function preferred not to be of same name.
+Inverted commas for char n strings.

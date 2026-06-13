@@ -18,7 +18,7 @@ int main(){
 int even(int a, int array[]){
   int count=0;
   for(int i=0; i<=a-1; i++){
-     if(array[i]%2==0) count++;
+     if(array[i]&0) count++;
 }
 return count;
 }

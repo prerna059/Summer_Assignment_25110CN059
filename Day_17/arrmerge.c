@@ -7,7 +7,7 @@ int main(){
         printf("Enter a positive element.");
         return 0;
     }
-    int arr1[n1], arr2[n2];
+    int arr1[n1];
     for(int i=0; i<n1; i++){
         printf("Enter element %d: ", i+1);
         scanf("%d", &arr1[i]);
@@ -18,6 +18,7 @@ int main(){
         printf("Enter a positive element.");
         return 0;
     }
+     int arr2[n2];
      for(int i=0; i<n2; i++){
         printf("Enter element %d: ", i+1);
         scanf("%d", &arr2[i]);

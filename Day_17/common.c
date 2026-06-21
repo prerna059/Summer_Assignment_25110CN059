@@ -23,10 +23,9 @@ int main(){
       int n=(n1<n2)?n1:n2;
       for(int j=0; j<n; j++) {    
             if(arr1[j] == arr2[j]) {
-                printf("%d ", arr1[j];           
+                printf("%d ", arr1[j]);           
             }  
         }
-    }
    return 0;
 }      
            

@@ -24,9 +24,6 @@ int main()
           }
         }
      }
-for(int k=0; k<n; k++) {
-    printf("%d ", arr[k]);
-}
     printf("The sorted array:\n");
     array_print(n, arr);
    

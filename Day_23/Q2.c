@@ -1,1 +1,1 @@
-
+//Find first repeating character

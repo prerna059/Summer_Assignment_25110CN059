@@ -2,7 +2,7 @@
 #include <string.h>
 
 int main() {
-    char str[200];
+    char str[500];
     int freq[256] = {0}; //256 ascii characters in c.
 
     puts("Enter a string: ");
@@ -14,9 +14,9 @@ int main() {
         freq[ch]++;
     }
 
-    printf("Character frequencies:\n");
-    for (int i = 0; i < 256; i++) {
-        if (freq[i] > 0) {
+    printf("Character frequencies are as follows:\n");
+    for(int i=0; i<256; i++){
+        if(freq[i]>0){
             printf("'%c': %d\n", i, freq[i]);
         }
     }

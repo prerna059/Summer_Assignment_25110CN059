@@ -14,8 +14,8 @@ int main(){
     }
 
     //Rowwise bubble sort using strcmp 
-    for(int i=0; i<n-1; i++){
-        for(int j=i+1; j<n; j++){
+    for(int i=0; i<=n-1; i++){
+        for(int j=i+1; j<=n; j++){
             if(strcmp(names[i], names[j]) > 0){
                 strcpy(temp, names[i]);
                 strcpy(names[i], names[j]);
@@ -25,7 +25,7 @@ int main(){
           }
 
     printf("Names in alphabetical order:");
-    for(int i=0; i<n; i++){
+    for(int i=0; i<=n; i++){
         printf("%s", names[i]);
     }
 

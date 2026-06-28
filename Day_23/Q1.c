@@ -1,5 +1,5 @@
 //Find first non-repeating character
-#include <stdio.h>
+#include<stdio.h>
 #include <string.h>
 
 int main() {

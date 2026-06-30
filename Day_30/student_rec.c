@@ -1,89 +1,120 @@
 #include<stdio.h>
 #include<string.h>
 
-struct Student{
-    int rollNo;
-    char name[50];
-    int year;
-    float marks;
-};
+#define MAX_STUDENTS 100
+#define NAME_LEN 50
+#define COURSE_LEN 50
 
 int main() {
-    struct Student students[100];
-    
-    int choice, roll;
-
-    do{
-        printf("\n--- Student Record Management System ---\n");
-        printf("1. Add student record\n");
-        printf("2. Display all records\n");
-        printf("3. Search by roll number\n");
-        printf("4. Exit\n");
+    int rollNos[MAX_STUDENTS];
+    char names[MAX_STUDENTS][NAME_LEN];
+    int ages[MAX_STUDENTS];
+    char courses[MAX_STUDENTS][COURSE_LEN];
+    int count=0;
+    int choice, i, roll, found;
+do {
+        printf("\n--- Student Record System ---\n");
+        printf("1. Add Student\n");
+        printf("2. Display All Students\n");
+        printf("3. Search Student by Roll No\n");
+        printf("4. Delete Student by Roll No\n");
+        printf("5. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-        getchar();
 
-        switch(choice){
+        switch(choice) {
             case 1:
-                int n = 0;//number of students
-                if(n<100){
-                    printf("Enter roll number: ");
-                    scanf("%d", &students[n].rollNo);
+                if(count < MAX_STUDENTS) {
+                    printf("Enter Roll No: ");
+                    scanf("%d", &rollNos[count]);
+                    getchar(); 
+
+                    printf("Enter Name: ");
+                    fgets(names[count], NAME_LEN, stdin);
+                    names[count][strcspn(names[count], "\n")] = '\0';
+
+                    printf("Enter Age: ");
+                    scanf("%d", &ages[count]);
                     getchar();
 
-                    printf("Enter name: ");
-                    fgets(students[n].name, sizeof(students[n].name), stdin);
-                    students[n].name[strcspn(students[n].name, "\n")] = '\0';
+                    printf("Enter Course: ");
+                    fgets(courses[count], COURSE_LEN, stdin);
+                    courses[count][strcspn(courses[count], "\n")] = '\0';
 
-                    printf("Enter year: ");
-                    scanf("%d", &students[n].year);
-                    getchar();
-
-                    printf("Enter marks: ");
-                    scanf("%f", &students[n].marks);
-
-                    n++;
-                    printf("Records added successfully!\n");
+                    count++;
+                    printf("Student added successfully!\n");
                 } 
                 else{
-                printf("Cannot add more students.\n");
+                    printf("Student list is full!\n");
                 }
-
                 break;
 
             case 2:
-             printf("\n--- Student Records ---\n");
-                for(int i=0; i<n; i++){
-                printf("Roll No: %d | Name: %s | Year: %d | Marks: %f\n", students[i].rollNo, students[i].name, students[i].year, students[i].marks);
+                if(count == 0) {
+                    printf("No records found.\n");
+                } 
+                else{
+                    printf("\n--- Student Records ---\n");
+                    for(i = 0; i<count; i++) {
+                        printf("Roll No: %d\n", rollNos[i]);
+                        printf("Name   : %s\n", names[i]);
+                        printf("Age    : %d\n", ages[i]);
+                        printf("Course : %s\n\n", courses[i]);
+                    }
                 }
-
-                  break;
+                break;
 
             case 3:
-                printf("Enter roll number to search: ");
+                printf("Enter Roll No to search: ");
                 scanf("%d", &roll);
-                int found = 0;
-                for(int i= 0; i<n; i++){
-                    if(students[i].rollNo == roll){
-                        printf("Record found: Roll No: %d | Name: %s | Year: %d | Marks: %f\n", students[i].rollNo, students[i].name, students[i].year, students[i].marks);
+                found=0;
+                for(i = 0; i<count; i++){
+                    if(rollNos[i] == roll) {
+                        printf("Record Found:\n");
+                        printf("Roll No: %d\n", rollNos[i]);
+                        printf("Name   : %s\n", names[i]);
+                        printf("Age    : %d\n", ages[i]);
+                        printf("Course : %s\n", courses[i]);
                         found=1;
                         break;
                     }
                 }
                 if(!found){
-                    printf("No record found.");
+                printf("No student found with Roll No %d\n", roll);
                 }
-                 
-                 break;
+                break;
 
             case 4:
-                printf("Exiting...\n");
+                printf("Enter Roll No to delete: ");
+                scanf("%d", &roll);
+                found = 0;
+                for(i = 0; i<count; i++){
+                    if(rollNos[i] == roll){
+                        for(int j=i; j<count-1; j++){
+                            rollNos[j] = rollNos[j+1];
+                            strcpy(names[j], names[j+1]);
+                            ages[j] = ages[j+1];
+                            strcpy(courses[j], courses[j+1]);
+                        }
+                        count--;
+                        printf("Record deleted successfully!\n");
+                        found=1;
+                        break;
+                    }
+                }
+                if(!found){
+                printf("No student found with Roll No %d\n", roll);
+                }
+                break;
+
+            case 5:
+                printf("Exiting program...\n");
                 break;
 
             default:
-                printf("Invalid input. Enter again.\n");
+                printf("Invalid input, try again.\n");
         }
-    } while(choice!=4);
+    } while(choice!=5);
 
-return 0;
+    return 0;
 }

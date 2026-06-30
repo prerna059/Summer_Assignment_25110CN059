@@ -24,7 +24,7 @@ do {
 
         switch(choice) {
             case 1:
-                if(count < MAX_STUDENTS) {
+                if(count<MAX_STUDENTS) {
                     printf("Enter Roll No: ");
                     scanf("%d", &rollNos[count]);
                     getchar(); 
@@ -50,7 +50,7 @@ do {
                 break;
 
             case 2:
-                if(count == 0) {
+                if(count==0){
                     printf("No records found.\n");
                 } 
                 else{
